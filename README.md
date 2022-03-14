@@ -3,6 +3,8 @@ The Near Financial Call Option in this demo package is a clone of the famous nea
 
 The READ-ME file details from that project have been heavily reproduced below for the purposes of standing up this project locally.
 
+The inspiration for the use of NEARs storage feature is from the famous near counter example found here: https://github.com/near-examples/counter.
+
 
 # Details on Submitted Package...
 The package uses several critical features of NEAR.  These include:
@@ -103,9 +105,19 @@ As you can see in `package.json`, this does two things:
 2. builds & deploys frontend code to GitHub using [gh-pages]. This will only work if the project already has a repository set up on GitHub. Feel free to modify the `deploy` script in `package.json` to deploy elsewhere.
 
 ## Step 5: some Calls from [near-cli]
-near call calloption.testnet callOption '{"_spotPrice": "100.0", "_strikePrice": "99.5", "_volatility": "0.07", "_maturity": "0.25", "_interest": "0.05"}' --account-id 'youraccountid'
+
+1. Value a call option:
+
+ near call calloption.testnet callOption '{"_spotPrice": "100.0", "_strikePrice": "99.5", "_volatility": "0.07", "_maturity": "0.25", "_interest": "0.05"}' --account-id 'youraccountid'
+
 near call calloption.testnet callOption '{"_spotPrice": "120.0", "_strikePrice": "99.5", "_volatility": "0.30", "_maturity": "1.0", "_interest": "0.05"}' --account-id 'youraccountid'
+
+2. Simulate purchase of call option:
+
 near call calloption.testnet buyOption '{}' --account-id 'youraccountid' --deposit .05
+
+3. Return messages - previous option evaluations and simulated option purchase outcomes:
+
 near call calloption.testnet getMessages '{}' --account-id 'youraccountid'
 
 [near]: https://near.org/
