@@ -1,5 +1,5 @@
 # NearFinancialCallOption
-The Near Financial Call Option in this demo package is a clone of the famous near guest-book example found here: https://examples.near.org/guest-book
+The Near Financial Call Option in this demo package is a clone of the famous near guest-book example found here: https://examples.near.org/guest-book.  The code has been heavily extended to utilize additional features of the NEAR protocol and to perform complex financial evaluation and simulation.  The code is written in AS and is not intended to serve financial transactions. 
 
 The READ-ME file details from that project have been heavily reproduced below for the purposes of standing up this project locally.
 
@@ -21,10 +21,11 @@ The backend of the contract uses approximations for the [inverse normal] and for
 The [inverse normal] is a world class approximation.  The [normal-CDF] results in some error, a benchmark test was performed in the excel file accompanying the project.
 
 # Intent
-The overall intent of this package is to show that NEAR is capable of performing complex simulations and mathematical operations with relatively high speed and precision.  It could be possible to use the code developed in here for the creation of an option market.  The code would need to be extended to make oracle calls to return prices of crypto assets and their volatilities (from a market data provider which calculated these based on historical data) to act as a market maker using the [Black-Scholes] price as reference.  Markets could open with [Black-Scholes] prices and then 
+The overall intent of this package is to show that NEAR is capable of performing complex simulations and mathematical operations with relatively high speed and precision.  It could be possible to use the code developed in here for the creation of an option market.  The code would need to be extended to make oracle calls to return prices of crypto assets and their volatilities (from a market data provider which calculated these based on historical data) to act as a market maker using the [Black-Scholes] price as reference.  Markets could open with [Black-Scholes] prices and then be driven by market forces.
 
 Alternatively, markets could be open to purely to the forces of supply and demand from which the [Black-Scholes] formula could be used to back out the [implied volatility] which acts as a critical reference point for making financial decisions when compared against realized and historical volatilities [realized vs implied vs historical volatility].
 
+Extending the project in this direction require porting the code base to [RUST] as [AS] is [not currently intended for financial purposes].
 
 # Quick Start
 
@@ -121,3 +122,6 @@ As you can see in `package.json`, this does two things:
 [normal-CDF]:https://www.researchgate.net/publication/275885986_Approximations_to_Standard_Normal_Distribution_Function
 [implied volatility]: https://en.wikipedia.org/wiki/Implied_volatility
 [realized vs implied vs historical volatility]: https://www.macroption.com/implied-vs-realized-vs-historical-volatility/
+[RUST]: https://github.com/near/near-sdk-rs
+[AS]: https://near.github.io/near-sdk-as/
+[not currently intended for financial purposes]:https://docs.near.org/docs/develop/contracts/as/intro#:~:text=The%20NEAR%20platform%20supports%20writing,AssemblyScript%20on%20the%20NEAR%20platform.
