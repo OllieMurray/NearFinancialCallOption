@@ -1,12 +1,15 @@
-# Guest Book
+# NearFinancialCallOption
+The Near Financial Call Option in this demo package is a clone of the famous near guest-book example found here: https://examples.near.org/guest-book
 
-[![Build Status](https://travis-ci.com/near-examples/guest-book.svg?branch=master)](https://travis-ci.com/near-examples/guest-book)
+# Details on Submitted Package...
+The package uses several critical features of NEAR.  These include:
+Persistent Collections - Interactions with the contract in the  form of option evaluations and simulations are stored on the blockchain.
+Storage - Previously evaluated option contracts are stored on the blockchain and referenced when subsequent option purchases are made.
+Assert Statements - Checks are performed on option input details to ensure they conform to the assumptions of the Black-Scholes model for option pricing.
+Context - Retreives the deposited amount and reports it to the message stack.
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/near-examples/guest-book)
 
-<!-- MAGIC COMMENT: DO NOT DELETE! Everything above this line is hidden on NEAR Examples page -->
-
-Sign in with [NEAR] and add a message to the guest book! A starter app built with an [AssemblyScript] backend and a [React] frontend.
+Sign in with [NEAR] and Evaluate a Call Option! A starter app built with an [AssemblyScript] backend and a [React] frontend.
 
 # Quick Start
 
@@ -28,10 +31,7 @@ Now you'll have a local development environment backed by the NEAR TestNet! Runn
    [/src/index.html](/src/index.html) is a great place to start exploring. Note
    that it loads in `/src/index.js`, where you can learn how the frontend
    connects to the NEAR blockchain.
-3. Tests: there are different kinds of tests for the frontend and backend. The
-   backend code gets tested with the [asp] command for running the backend
-   AssemblyScript tests, and [jest] for running frontend tests. You can run
-   both of these at once with `yarn test`.
+3. Tests: there are currently only tests for the backend.  The project could be updated to include tests for the front end.
 
 Both contract and client-side code will auto-reload as you change source files.
 
@@ -85,6 +85,8 @@ As you can see in `package.json`, this does two things:
 
 1. builds & deploys smart contracts to NEAR TestNet
 2. builds & deploys frontend code to GitHub using [gh-pages]. This will only work if the project already has a repository set up on GitHub. Feel free to modify the `deploy` script in `package.json` to deploy elsewhere.
+
+
 
 [near]: https://near.org/
 [yarn]: https://yarnpkg.com/
