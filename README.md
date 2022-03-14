@@ -102,7 +102,11 @@ As you can see in `package.json`, this does two things:
 1. builds & deploys smart contracts to NEAR TestNet
 2. builds & deploys frontend code to GitHub using [gh-pages]. This will only work if the project already has a repository set up on GitHub. Feel free to modify the `deploy` script in `package.json` to deploy elsewhere.
 
-
+## Step 5: some Calls from [near-cli]
+near call calloption.testnet callOption '{"_spotPrice": "100.0", "_strikePrice": "99.5", "_volatility": "0.07", "_maturity": "0.25", "_interest": "0.05"}' --account-id 'youraccountid'
+near call calloption.testnet callOption '{"_spotPrice": "120.0", "_strikePrice": "99.5", "_volatility": "0.30", "_maturity": "1.0", "_interest": "0.05"}' --account-id 'youraccountid'
+near call calloption.testnet buyOption '{}' --account-id 'youraccountid' --deposit .05
+near call calloption.testnet getMessages '{}' --account-id 'youraccountid'
 
 [near]: https://near.org/
 [yarn]: https://yarnpkg.com/
