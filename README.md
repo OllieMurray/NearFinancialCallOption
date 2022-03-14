@@ -1,15 +1,24 @@
 # NearFinancialCallOption
 The Near Financial Call Option in this demo package is a clone of the famous near guest-book example found here: https://examples.near.org/guest-book
 
+The READ-ME file details from that project have been heavily reproduced below for the purposes of standing up this project locally.
+
+
 # Details on Submitted Package...
 The package uses several critical features of NEAR.  These include:
 Persistent Collections - Interactions with the contract in the  form of option evaluations and simulations are stored on the blockchain.
 Storage - Previously evaluated option contracts are stored on the blockchain and referenced when subsequent option purchases are made.
-Assert Statements - Checks are performed on option input details to ensure they conform to the assumptions of the Black-Scholes model for option pricing.
+Assert Statements - Checks are performed on option input details to ensure they conform to the assumptions of the [Black-Scholes] model for option pricing.
 Context - Retreives the deposited amount and reports it to the message stack.
 
 
 Sign in with [NEAR] and Evaluate a Call Option! A starter app built with an [AssemblyScript] backend and a [React] frontend.
+
+The contract is currently deployed on test net as calloption.testnet and can be interacted with there through the [near-cli].
+
+The backend of the contract uses approximations for the [inverse normal] and for the [normal-CDF] (Model #10 - Lin 1990).
+
+The [inverse normal] is a world class approximation.  The [normal-CDF] results in some error, a benchmark test was performed in the excel file accompanying the project.
 
 # Quick Start
 
@@ -101,3 +110,6 @@ As you can see in `package.json`, this does two things:
 [cli]: https://www.w3schools.com/whatis/whatis_cli.asp
 [create-near-app]: https://github.com/near/create-near-app
 [gh-pages]: https://github.com/tschaub/gh-pages
+[Black-Scholes]: https://en.wikipedia.org/wiki/Black%E2%80%93Scholes_model
+[inverse normal]:https://stackedboxes.org/2017/05/01/acklams-normal-quantile-function/
+[normal-CDF]:https://www.researchgate.net/publication/275885986_Approximations_to_Standard_Normal_Distribution_Function
